@@ -47,15 +47,13 @@ function addToCart(productId) {
 
 // Remove item from cart
 function removeFromCart(productId) {
-	// cart = cart.filter((item) => item.id !== productId);
-	// renderCart();
-	const indx = cart.findIndex((p) => p.id === productId);
-	if(indx != -1){
-		cart.splice(indx, 1);
-		renderCart();
-	}
+  const indx = cart.findIndex((p) => p.id === productId);
+  if(indx != -1){
+    cart.splice(indx, 1);
+    renderCart();
+    sessionStorage.setItem('cart', JSON.stringify(cart)); // Update the cart in session storage
+  }
 }
-
 // Clear cart
 function clearCart() {
 	//cart = [];  // it cant be used with const type of array
