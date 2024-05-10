@@ -41,7 +41,7 @@ function addToCart(productId) {
 	if(product){
 		cart.push(product);
 		renderCart();
-		sessionStorage.setItem('product', JSON.stringify(product));
+		sessionStorage.setItem('product', JSON.stringify(cart));
 	}
 }
 
